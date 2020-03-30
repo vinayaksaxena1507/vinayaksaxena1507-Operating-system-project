@@ -67,3 +67,25 @@ scanf("%d", &p_list[i].burst_t);
 p_list[i].flag = 0;
 b_t = b_t + p_list[i].burst_t;
 }
+Sorting();
+for(int i=0;i<n;i++)
+{
+a[i]=p_list[i].burst_t;
+}
+p_list[9].burst_t = 9999;
+for(t = p_list[0].arrival_t; t <= b_t+1;)
+{
+peak = 9;
+for(i=0;i<n;i++)
+{
+if(p_list[i].arrival_t <= t && p_list[i].burst_t < p_list[peak].burst_t && p_list[i].flag != 1)
+{
+peak = i;
+}
+if(p_list[peak].burst_t==0 && p_list[i].flag != 1)
+{
+p_list[i].flag = 1;
+p_list[peak].ct=t;p_list[peak].burst_t=9999;
+printf("P%d completes in %d\n",p_list[i].p_no,p_list[peak].ct);
+}
+}
