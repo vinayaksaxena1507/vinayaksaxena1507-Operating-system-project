@@ -54,3 +54,16 @@ printf("enter the no. of processes: ");
 scanf("%d",&n);
 
 for(i = 0; i < n; i++)
+
+{
+
+p_list[i].p_no = i+1;
+
+printf("\nEnter Details For P%d process:-\n", p_list[i].p_no);
+printf("Enter Arrival Time: ");
+scanf("%d", &p_list[i].arrival_t );
+printf("Enter Burst Time: ");
+scanf("%d", &p_list[i].burst_t);
+p_list[i].flag = 0;
+b_t = b_t + p_list[i].burst_t;
+}
